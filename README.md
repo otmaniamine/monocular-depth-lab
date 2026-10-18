@@ -4,6 +4,24 @@ La version validée est conservée sous le tag Git `v1.0.0`. Voir `VERSION-STABL
 
 Ce projet utilise les dépôts officiels [Depth Anything V2](https://github.com/DepthAnything/Depth-Anything-V2) et [MiDaS](https://github.com/isl-org/MiDaS). Il comprend cinq jeux de poids préentraînés : Depth Anything V2 Small relatif, ses variantes métriques intérieur (Hypersim) et extérieur (Virtual KITTI 2), DPT Hybrid et DPT Large. Aucun dataset n'est nécessaire pour appliquer ces modèles à vos images. Le calcul utilise le CPU ; la mémoire nécessaire dépend du modèle et de la résolution.
 
+## Exemples de résultats
+
+Les trois modèles ont été exécutés sur la même photo d'exemple du dépôt officiel Depth Anything V2. Chaque image montre la photo à gauche et la profondeur estimée à droite.
+
+### Depth Anything V2 Small
+
+![Photo de rue et profondeur estimée par Depth Anything V2 Small](docs/examples/depth-anything-v2-small.png)
+
+### MiDaS / DPT Hybrid
+
+![Photo de rue et profondeur estimée par DPT Hybrid](docs/examples/dpt-hybrid.png)
+
+### DPT Large
+
+![Photo de rue et profondeur estimée par DPT Large](docs/examples/dpt-large.png)
+
+Les couleurs sont normalisées séparément pour chaque sortie ; elles ne représentent pas des mètres. Ces exemples montrent le fonctionnement des modèles et permettent de comparer leurs détails visuels, sans mesurer leur précision. Les conditions d'exécution et la source sont documentées dans [docs/examples/README.md](docs/examples/README.md).
+
 ## Essai facile
 
 1. Copiez vos photos et vidéos directement dans le dossier `inputs/`, à la racine du projet (sans sous-dossier).
@@ -41,4 +59,4 @@ Les dépôts originaux sont dans `source` et `midas`. Les modèles sont dans leu
 
 ## Fichiers locaux et publication
 
-`inputs/` contient les médias à traiter, et `results/` les sorties. Les médias, résultats, poids, environnements Python et sauvegardes sont exclus de Git. Seul `inputs/README.md` est publié pour documenter le dossier d'entrée. Les exemples de commandes utilisent des chemins relatifs à la racine du projet.
+`inputs/` contient les médias à traiter, et `results/` les sorties. Les médias personnels, résultats locaux, poids, environnements Python et sauvegardes sont exclus de Git. Seul `inputs/README.md` est publié pour documenter le dossier d'entrée. Les illustrations publiques sélectionnées sont conservées séparément dans `docs/examples/`. Les exemples de commandes utilisent des chemins relatifs à la racine du projet.
