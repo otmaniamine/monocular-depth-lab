@@ -1,0 +1,13 @@
+.venv/
+source/
+midas/
+results/
+__pycache__/
+inputs/*
+!inputs/README.md
+sauvegardes/
+*.bundle
+*.log
+.env
+.env.*
+!.env.example

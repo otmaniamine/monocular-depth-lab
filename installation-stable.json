@@ -1,0 +1,50 @@
+{
+  "python": "3.12.14",
+  "models": [
+    {
+      "sha256": "715fade13be8f229f8a70cc02066f656f2423a59effd0579197bbf57860e1378",
+      "path": "source/checkpoints/depth_anything_v2_vits.pth",
+      "bytes": 99218434,
+      "url": "https://huggingface.co/depth-anything/Depth-Anything-V2-Small/resolve/main/depth_anything_v2_vits.pth"
+    },
+    {
+      "sha256": "b782898d8a3e8be1f639de33837ed85e9b4b73e40f8f5e5cd99067588d722545",
+      "path": "source/metric_depth/checkpoints/depth_anything_v2_metric_hypersim_vits.pth",
+      "bytes": 99222290,
+      "url": "https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-Hypersim-Small/resolve/main/depth_anything_v2_metric_hypersim_vits.pth"
+    },
+    {
+      "sha256": "9203e538d35255c90dda4b7fedb47ff33fe725497bcca3b1e53b3a65ee63f0cb",
+      "path": "source/metric_depth/checkpoints/depth_anything_v2_metric_vkitti_vits.pth",
+      "bytes": 99221808,
+      "url": "https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-VKITTI-Small/resolve/main/depth_anything_v2_metric_vkitti_vits.pth"
+    },
+    {
+      "sha256": "501f0c75b3bca7daec6b3682c5054c09b366765aef6fa3a09d03a5cb4b230853",
+      "path": "midas/weights/dpt_hybrid_384.pt",
+      "bytes": 492757791,
+      "url": "https://github.com/isl-org/MiDaS/releases/download/v3/dpt_hybrid_384.pt"
+    },
+    {
+      "sha256": "2f21e586477d90cb9624c7eef5df7891edca49a1c4795ee2cb631fd4daa6ca69",
+      "path": "midas/weights/dpt_large_384.pt",
+      "bytes": 1376378527,
+      "url": "https://github.com/isl-org/MiDaS/releases/download/v3/dpt_large_384.pt"
+    }
+  ],
+  "device": "cpu",
+  "version": "v1.0.0",
+  "repositories": [
+    {
+      "path": "source",
+      "commit": "a561b849ebae10a6f5ef49e26c83cbbcd36c71bf",
+      "url": "https://github.com/DepthAnything/Depth-Anything-V2.git"
+    },
+    {
+      "path": "midas",
+      "commit": "454597711a62eabcbf7d1e89f3fb9f569051ac9b",
+      "url": "https://github.com/isl-org/MiDaS.git"
+    }
+  ],
+  "date": "2026-10-18"
+}
