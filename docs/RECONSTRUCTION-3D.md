@@ -2,24 +2,32 @@
 
 ## Utilisation
 
-1. Placez vos photos dans `inputs/`.
-2. Double-cliquez sur `Reconstruire-3D.cmd` et choisissez intérieur ou extérieur.
-3. Le premier résultat s'ouvre dans votre navigateur. Glissez pour tourner et utilisez la molette ou le curseur pour zoomer. Les boutons Face, Vue oblique et Profil changent le point de vue.
-
-Pour une démonstration publique sans utiliser de photo personnelle, lancez `Demo-3D.cmd`.
-
-Depuis PowerShell, à la racine du projet :
+Ouvrez le dossier du projet dans VS Code, puis **Terminal > Nouveau terminal**, avec **PowerShell**. Placez vos photos dans `inputs/`. Depuis la racine du projet, exécutez une des commandes ci-dessous selon la scène. Remplacez `photo.jpg` par le nom de votre fichier ; les guillemets permettent d'utiliser des noms contenant des espaces.
 
 ```powershell
 # Scène intérieure
-.\.venv\Scripts\python.exe .\reconstruct.py --input .\inputs\photo.jpg --model indoor --open
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs\photo.jpg" --model indoor --open
 
 # Scène extérieure, en conservant les profondeurs entre 0,1 et 35 mètres estimés
-.\.venv\Scripts\python.exe .\reconstruct.py --input .\inputs\photo.jpg --model outdoor --max-depth 35 --open
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs\photo.jpg" --model outdoor --max-depth 35 --open
 
 # Reproduire l'exemple de l'escalier intérieur
-.\.venv\Scripts\python.exe .\reconstruct.py --input .\source\assets\examples\demo15.jpg --model indoor --open
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\source\assets\examples\demo15.jpg" --model indoor --open
+
+# Reproduire l'exemple public de rue
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\source\assets\examples\demo01.jpg" --model outdoor --max-depth 35 --open
+
+# Traiter toutes les photos du dossier inputs avec le modele interieur
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs" --model indoor --open
 ```
+
+Avec `--open`, le premier résultat s'ouvre dans votre navigateur. Glissez pour tourner et utilisez la molette ou le curseur pour zoomer. Les boutons Face, Vue oblique et Profil changent le point de vue. Pour rouvrir un résultat existant depuis le terminal :
+
+```powershell
+Start-Process ".\results\3d\demo15_indoor.html"
+```
+
+Le [guide des commandes](COMMANDES.md) regroupe aussi les tests 2D, les vidéos et la comparaison des modèles. Aucune activation de `.venv` n'est nécessaire avec ces commandes.
 
 Un dossier est accepté, les vidéos ne le sont pas dans cette première version. Chaque photo est reconstruite séparément. Les photos du dossier sont traitées successivement ; elles ne sont pas fusionnées.
 
@@ -29,7 +37,7 @@ Les sorties vont dans `results/3d/` et restent locales :
 
 | Extension | Contenu |
 | --- | --- |
-| `.html` | Visionneuse 3D autonome, utilisable hors ligne par double-clic, sans CDN ni envoi de médias |
+| `.html` | Visionneuse 3D autonome, utilisable hors ligne avec `--open` ou `Start-Process`, sans CDN ni envoi de médias |
 | `.ply` | Nuage binaire XYZ/RGB compatible avec les lecteurs PLY ; repère caméra X droite, Y bas, Z devant |
 | `.npy` | Profondeur métrique brute à la résolution de traitement, avant filtrage |
 | `.npz` | Points XYZ filtrés, couleurs RGB et pixels correspondants |
@@ -56,7 +64,7 @@ Si la caméra est inconnue, le programme suppose un champ horizontal de 60 degr�
 Pour une photo calibrée, fournissez `--fx`, `--fy` et, si connus, `--cx`, `--cy` en pixels de la photo originale. Exemple de syntaxe avec des valeurs illustratives :
 
 ```powershell
-.\.venv\Scripts\python.exe .\reconstruct.py --input .\inputs\photo.jpg --model indoor --fx 1200 --fy 1200 --cx 959.5 --cy 539.5 --open
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs\photo.jpg" --model indoor --fx 1200 --fy 1200 --cx 959.5 --cy 539.5 --open
 ```
 
 Ne réutilisez pas ces valeurs sans calibration de votre caméra. Le programme adapte les paramètres au redimensionnement en respectant les centres des pixels : `fx' = sx × fx`, `cx' = sx × (cx + 0,5) - 0,5` (idem pour Y).
@@ -75,7 +83,7 @@ Pour une reconstruction plus complète, l'étape suivante serait d'utiliser plus
 
 ## Contribution du projet et validation
 
-Le dépôt officiel Depth Anything V2 fournit déjà un script de projection vers PLY. La contribution de cette version est l'intégration locale : paramètres de caméra explicites et adaptés au redimensionnement, filtrage, export avec métadonnées, visionneuse hors ligne et lanceur simple. La géométrie perspective est une méthode standard, pas un nouvel algorithme inventé ici.
+Le dépôt officiel Depth Anything V2 fournit déjà un script de projection vers PLY. La contribution de cette version est l'intégration locale : paramètres de caméra explicites et adaptés au redimensionnement, filtrage, export avec métadonnées, visionneuse hors ligne et commandes documentées pour le terminal. La géométrie perspective est une méthode standard, pas un nouvel algorithme inventé ici.
 
 Les tests numériques couvrent un plan de profondeur connue, le retour des points vers leurs pixels, la cohérence du redimensionnement, les profondeurs invalides, les discontinuités et le format PLY :
 

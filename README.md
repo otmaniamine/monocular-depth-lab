@@ -4,9 +4,28 @@ La version validée est conservée sous le tag Git `v1.0.0`. Voir `VERSION-STABL
 
 Ce projet utilise les dépôts officiels [Depth Anything V2](https://github.com/DepthAnything/Depth-Anything-V2) et [MiDaS](https://github.com/isl-org/MiDaS). Il comprend cinq jeux de poids préentraînés : Depth Anything V2 Small relatif, ses variantes métriques intérieur (Hypersim) et extérieur (Virtual KITTI 2), DPT Hybrid et DPT Large. Aucun dataset n'est nécessaire pour appliquer ces modèles à vos images. Le calcul utilise le CPU ; la mémoire nécessaire dépend du modèle et de la résolution.
 
+## Terminal de VS Code
+
+Ouvrez le dossier du projet dans VS Code, puis **Terminal > Nouveau terminal** et choisissez **PowerShell**. Toutes les commandes ci-dessous s'exécutent depuis la racine du projet, où se trouvent `depth.py`, `reconstruct.py`, `.venv/` et `inputs/`.
+
+Les commandes appellent directement Python dans `.venv` : aucune activation de l'environnement n'est nécessaire. Le [guide des commandes](docs/COMMANDES.md) regroupe les tests sur photos, vidéos, la comparaison des modèles et la reconstruction 3D.
+
 ## Reconstruction 3D
 
-Une photo peut maintenant être convertie en nuage de points coloré, exporté en PLY et exploré dans une visionneuse hors ligne. Placez vos photos dans `inputs/`, lancez `Reconstruire-3D.cmd`, puis choisissez intérieur ou extérieur. Pour l'exemple public de rue, lancez `Demo-3D.cmd`. Les sorties sont dans `results/3d/`.
+Une photo peut être convertie en nuage de points coloré, exporté en PLY et exploré dans une visionneuse hors ligne. Placez vos photos dans `inputs/`, puis choisissez la commande correspondant à votre scène :
+
+```powershell
+# Photos d'interieur
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs" --model indoor --open
+
+# Photos d'exterieur
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs" --model outdoor --open
+
+# Demonstration avec une photo publique fournie par le depot officiel
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\source\assets\examples\demo01.jpg" --model outdoor --max-depth 35 --open
+```
+
+Exécutez une seule de ces commandes selon le cas. Les sorties sont dans `results/3d/`. `--open` ouvre le premier résultat dans votre navigateur.
 
 ![Nuage de points reconstruit depuis la photo publique d'un escalier intérieur](docs/examples/reconstruction-3d.png)
 
@@ -30,13 +49,13 @@ Les trois modèles ont été exécutés sur la même photo d'exemple du dépôt 
 
 Les couleurs sont normalisées séparément pour chaque sortie ; elles ne représentent pas des mètres. Ces exemples montrent le fonctionnement des modèles et permettent de comparer leurs détails visuels, sans mesurer leur précision. Les conditions d'exécution et la source sont documentées dans [docs/examples/README.md](docs/examples/README.md).
 
-## Essai facile
+## Tester des photos et videos
 
 1. Copiez vos photos et vidéos directement dans le dossier `inputs/`, à la racine du projet (sans sous-dossier).
-2. Double-cliquez sur `Tester-photos-videos.cmd`, à la racine du projet.
+2. Exécutez la commande ci-dessous dans le terminal PowerShell de VS Code.
 3. Ouvrez `results/relative/` pour voir les résultats.
 
-Vous pouvez aussi glisser une photo, une vidéo ou un autre dossier sur `Tester-photos-videos.cmd`. La carte de profondeur apparaît à côté de l'image d'origine. Une vidéo peut prendre longtemps sur CPU : commencez par une courte séquence.
+La carte de profondeur apparaît à côté de l'image d'origine. Une vidéo peut prendre longtemps sur CPU : commencez par une courte séquence.
 
 Depuis la racine du projet, exécutez le même test dans PowerShell :
 
@@ -44,7 +63,16 @@ Depuis la racine du projet, exécutez le même test dans PowerShell :
 .\.venv\Scripts\python.exe .\depth.py --input ".\inputs" --model relative
 ```
 
-Pour comparer les trois modèles de la discussion sur la même photo, glissez la photo sur `Comparer-les-modeles.cmd`. Chaque modèle tourne successivement afin de limiter l'usage de la mémoire. Cette comparaison est lente, surtout avec DPT Large.
+Pour comparer les trois modèles sur la même photo, remplacez `photo.jpg` par le nom de votre fichier puis exécutez :
+
+```powershell
+foreach ($modele in @("relative", "hybrid", "large")) {
+    .\.venv\Scripts\python.exe .\depth.py --input ".\inputs\photo.jpg" --model $modele
+    if ($LASTEXITCODE -ne 0) { throw "Echec du modele : $modele" }
+}
+```
+
+Chaque modèle tourne successivement afin de limiter l'usage de la mémoire. Les résultats vont dans `results/relative/`, `results/hybrid/` et `results/large/`. Cette comparaison est lente, surtout avec DPT Large.
 
 ## Choisir un modèle
 

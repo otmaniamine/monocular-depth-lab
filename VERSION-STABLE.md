@@ -46,7 +46,7 @@ Si vous aviez utilisé `git stash`, retrouvez les sauvegardes avec `git stash li
 
 ## Contenu de la sauvegarde
 
-Git conserve le programme local, les lanceurs, la documentation, `requirements-lock.txt` et `installation-stable.json` (références des deux dépôts officiels et empreintes des cinq fichiers de poids). Les dépôts dans `source` et `midas`, l'environnement `.venv`, les poids, les photos personnelles et les résultats restent sur le disque et ne changent pas quand vous changez de branche. Un changement futur de dépendances devra donc gérer son propre environnement si nécessaire.
+Git conserve le programme local, la documentation, `requirements-lock.txt` et `installation-stable.json` (références des deux dépôts officiels et empreintes des cinq fichiers de poids). Les dépôts dans `source` et `midas`, l'environnement `.venv`, les poids, les photos personnelles et les résultats restent sur le disque et ne changent pas quand vous changez de branche. Un changement futur de dépendances devra donc gérer son propre environnement si nécessaire.
 
 Les branches `main` et `developpement` et le tag `v1.0.0` sont publiés sur GitHub. Les fichiers lourds et médias exclus de Git nécessitent une sauvegarde distincte. Les archives Git locales (`*.bundle`) restent privées et ne doivent pas être publiées.
 
