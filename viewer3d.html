@@ -1,0 +1,88 @@
+<section id="depth-cloud-viewer">
+  <div class="viz-controls" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+    <button class="btn" type="button" data-view="front">Face</button>
+    <button class="btn" type="button" data-view="oblique">Vue oblique</button>
+    <button class="btn" type="button" data-view="side">Profil</button>
+    <label class="form-label">Zoom <input class="form-range" data-control="zoom" type="range" min="45" max="300" value="100" aria-label="Zoom"></label>
+    <label class="form-label">Points <input class="form-range" data-control="size" type="range" min="1" max="5" step="0.5" value="2" aria-label="Taille des points"></label>
+  </div>
+  <canvas aria-label="Nuage de points colore, rotation par glissement et zoom par molette" role="img" style="display:block;width:100%;height:460px;max-height:65vh;touch-action:none;background:var(--background)"></canvas>
+  <div class="text-small" aria-live="polite" data-status="cloud"></div>
+</section>
+<script>
+(() => {
+  const root = document.getElementById('depth-cloud-viewer');
+  const meta = __CLOUD_METADATA__;
+  const binary = atob('__CLOUD_BINARY__');
+  const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
+  const data = new DataView(bytes.buffer);
+  const positions = new Float32Array(meta.points * 3);
+  const colors = new Float32Array(meta.points * 3);
+  const low = [Infinity, Infinity, Infinity], high = [-Infinity, -Infinity, -Infinity];
+  for (let i = 0; i < meta.points; i++) {
+    for (let j = 0; j < 3; j++) {
+      const x = data.getFloat32(i * 15 + j * 4, true) * (j ? -1 : 1);
+      positions[i * 3 + j] = x;
+      low[j] = Math.min(low[j], x); high[j] = Math.max(high[j], x);
+      colors[i * 3 + j] = bytes[i * 15 + 12 + j] / 255;
+    }
+  }
+  const center = low.map((x, j) => (x + high[j]) / 2);
+  const extent = Math.max(...high.map((x, j) => x - low[j]), 0.001);
+  for (let i = 0; i < positions.length; i++) positions[i] = (positions[i] - center[i % 3]) / extent * 2;
+  const canvas = root.querySelector('canvas'), status = root.querySelector('[data-status]');
+  const gl = canvas.getContext('webgl', {antialias: true, preserveDrawingBuffer: true});
+  if (!gl) { status.textContent = 'WebGL indisponible. Ouvrez le fichier PLY dans une visionneuse 3D.'; status.setAttribute('role', 'alert'); return; }
+  const vertex = 'attribute vec3 position;attribute vec3 color;uniform mat4 matrix;uniform float size;varying vec3 rgb;void main(){gl_Position=matrix*vec4(position,1.0);gl_PointSize=size;rgb=color;}';
+  const fragment = 'precision mediump float;varying vec3 rgb;void main(){vec2 p=gl_PointCoord-0.5;if(dot(p,p)>0.25)discard;gl_FragColor=vec4(rgb,1.0);}';
+  function shader(type, source) {
+    const s = gl.createShader(type); gl.shaderSource(s, source); gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw Error(gl.getShaderInfoLog(s));
+    return s;
+  }
+  const program = gl.createProgram();
+  gl.attachShader(program, shader(gl.VERTEX_SHADER, vertex)); gl.attachShader(program, shader(gl.FRAGMENT_SHADER, fragment)); gl.linkProgram(program);
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) throw Error(gl.getProgramInfoLog(program));
+  gl.useProgram(program);
+  for (const [name, values] of [['position', positions], ['color', colors]]) {
+    const buffer = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buffer); gl.bufferData(gl.ARRAY_BUFFER, values, gl.STATIC_DRAW);
+    const location = gl.getAttribLocation(program, name); gl.enableVertexAttribArray(location); gl.vertexAttribPointer(location, 3, gl.FLOAT, false, 0, 0);
+  }
+  const matrixLocation = gl.getUniformLocation(program, 'matrix'), sizeLocation = gl.getUniformLocation(program, 'size');
+  let yaw = 0.35, pitch = 0.06, zoom = 100, size = 2;
+  const zoomInput = root.querySelector('[data-control="zoom"]'), sizeInput = root.querySelector('[data-control="size"]');
+  const cross = (a,b) => [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+  const norm = a => {const n=Math.hypot(...a); return a.map(x=>x/n);};
+  const dot = (a,b) => a.reduce((s,x,i)=>s+x*b[i],0);
+  function multiply(a,b) { const out=new Float32Array(16); for(let c=0;c<4;c++)for(let r=0;r<4;r++)for(let k=0;k<4;k++)out[c*4+r]+=a[k*4+r]*b[c*4+k]; return out; }
+  function draw() {
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(canvas.clientWidth * ratio); canvas.height = Math.round(canvas.clientHeight * ratio);
+    gl.viewport(0,0,canvas.width,canvas.height);
+    const bg = getComputedStyle(canvas).backgroundColor.match(/[\d.]+/g) || [0,0,0];
+    gl.clearColor(+bg[0]/255,+bg[1]/255,+bg[2]/255,1); gl.enable(gl.DEPTH_TEST); gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    const distance=2.2*100/zoom;
+    const eye=[distance*Math.sin(yaw)*Math.cos(pitch),distance*Math.sin(pitch),distance*Math.cos(yaw)*Math.cos(pitch)];
+    const z=norm(eye), x=norm(cross([0,1,0],z)), y=cross(z,x);
+    const view=new Float32Array([x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-dot(x,eye),-dot(y,eye),-dot(z,eye),1]);
+    const f=1/Math.tan(Math.PI/6), aspect=canvas.width/canvas.height, near=.01, far=100;
+    const projection=new Float32Array([f/aspect,0,0,0,0,f,0,0,0,0,(far+near)/(near-far),-1,0,0,2*far*near/(near-far),0]);
+    gl.uniformMatrix4fv(matrixLocation,false,multiply(projection,view)); gl.uniform1f(sizeLocation,size*ratio); gl.drawArrays(gl.POINTS,0,meta.points);
+    root.dataset.ready='true'; root.dataset.yaw=yaw.toFixed(4); root.dataset.points=meta.points;
+  }
+  function persist() { if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{view:'point-cloud',model:meta.model},privateContent:{yaw,pitch,zoom,size}}).catch(()=>{}); }
+  function restore(state) { const s=state?.privateContent; if(s && [s.yaw,s.pitch,s.zoom,s.size].every(Number.isFinite)){yaw=s.yaw;pitch=Math.max(-1.4,Math.min(1.4,s.pitch));zoom=Math.max(45,Math.min(300,s.zoom));size=Math.max(1,Math.min(5,s.size));zoomInput.value=zoom;sizeInput.value=size;} }
+  restore(window.openai?.widgetState);
+  window.addEventListener('openai:set_globals',e=>{restore(e.detail?.globals?.widgetState);draw();});
+  root.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>{yaw={front:0,oblique:.55,side:Math.PI/2}[button.dataset.view];pitch=0;draw();persist();}));
+  zoomInput.addEventListener('input',()=>{zoom=+zoomInput.value;draw();}); zoomInput.addEventListener('change',persist);
+  sizeInput.addEventListener('input',()=>{size=+sizeInput.value;draw();}); sizeInput.addEventListener('change',persist);
+  let pointer=null;
+  canvas.addEventListener('pointerdown',e=>{pointer={x:e.clientX,y:e.clientY};canvas.setPointerCapture(e.pointerId);});
+  canvas.addEventListener('pointermove',e=>{if(!pointer)return;yaw+=(e.clientX-pointer.x)*.008;pitch=Math.max(-1.4,Math.min(1.4,pitch+(e.clientY-pointer.y)*.008));pointer={x:e.clientX,y:e.clientY};draw();});
+  canvas.addEventListener('pointerup',()=>{pointer=null;persist();});canvas.addEventListener('pointercancel',()=>{pointer=null;});
+  canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(45,Math.min(300,zoom*Math.exp(-e.deltaY*.001)));zoomInput.value=zoom;draw();persist();},{passive:false});
+  status.textContent=meta.points.toLocaleString('fr-FR')+' points affichés · '+(meta.model==='indoor'?'Intérieur':'Extérieur')+' · '+(meta.estimated_camera?'Focale estimée':'Focale fournie')+' · Échelle métrique estimée';
+  new ResizeObserver(draw).observe(canvas); new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['class','style','data-theme']});draw();
+})();
+</script>

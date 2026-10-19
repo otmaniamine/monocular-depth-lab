@@ -4,6 +4,14 @@ La version validée est conservée sous le tag Git `v1.0.0`. Voir `VERSION-STABL
 
 Ce projet utilise les dépôts officiels [Depth Anything V2](https://github.com/DepthAnything/Depth-Anything-V2) et [MiDaS](https://github.com/isl-org/MiDaS). Il comprend cinq jeux de poids préentraînés : Depth Anything V2 Small relatif, ses variantes métriques intérieur (Hypersim) et extérieur (Virtual KITTI 2), DPT Hybrid et DPT Large. Aucun dataset n'est nécessaire pour appliquer ces modèles à vos images. Le calcul utilise le CPU ; la mémoire nécessaire dépend du modèle et de la résolution.
 
+## Reconstruction 3D
+
+Une photo peut maintenant être convertie en nuage de points coloré, exporté en PLY et exploré dans une visionneuse hors ligne. Placez vos photos dans `inputs/`, lancez `Reconstruire-3D.cmd`, puis choisissez intérieur ou extérieur. Pour l'exemple public de rue, lancez `Demo-3D.cmd`. Les sorties sont dans `results/3d/`.
+
+![Nuage de points reconstruit depuis la photo publique d'un escalier intérieur](docs/examples/reconstruction-3d.png)
+
+La reconstruction couvre les surfaces visibles. La profondeur est estimée et, sans calibration, la focale est supposée : ce résultat ne fournit pas de dimensions certifiées. Voir le [guide 3D et ses sources](docs/RECONSTRUCTION-3D.md) pour les commandes, les réglages et les limites.
+
 ## Exemples de résultats
 
 Les trois modèles ont été exécutés sur la même photo d'exemple du dépôt officiel Depth Anything V2. Chaque image montre la photo à gauche et la profondeur estimée à droite.
