@@ -8,6 +8,33 @@ L'environnement Python et les modèles doivent être installés. Les commandes u
 
 Déposez vos médias dans `inputs/`, sans sous-dossier. Dans les exemples, remplacez `photo.jpg` ou `video.mp4` par le nom de votre fichier. Conservez les guillemets si le nom contient des espaces.
 
+Copiez uniquement le contenu des blocs marqués `powershell`. Ne copiez pas le préfixe du terminal (`PS`, `(.venv)`, `>>`) ni la sortie du programme. Si `(.venv)` est déjà affiché dans votre terminal, les commandes ci-dessous fonctionnent aussi.
+
+## Démarrage rapide : reconstruire vos photos en 3D
+
+Après avoir placé vos photos d'intérieur dans `inputs/`, copiez seulement cette ligne :
+
+```powershell
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs" --model indoor --open
+```
+
+Pour des photos d'extérieur, utilisez plutôt :
+
+```powershell
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs" --model outdoor --open
+```
+
+Le programme affiche le nombre de points créés puis `Ouvrir :` avec le fichier HTML enregistré dans `results/3d/`. Cela confirme la création de la reconstruction. `--open` ouvre le premier résultat dans le navigateur.
+
+## Comprendre les messages du terminal
+
+- **`xFormers not available`**, éventuellement deux fois : l'optimisation xFormers est facultative et absente de cette installation. Le calcul sur CPU peut continuer ; aucun paquet supplémentaire n'est nécessaire pour les commandes présentées ici.
+- **`Jeton inattendu`, `ParserError`, ou erreur sur `@echo off`** : du contenu d'un ancien lanceur Windows a été collé dans PowerShell. Ne collez pas les lignes contenant `@echo off`, `%~dp0`, `set /p` ou `if errorlevel`. Utilisez les commandes Python de ce guide.
+- **Le terminal affiche `>>` et attend encore une saisie** : une commande est incomplète. Appuyez sur **Ctrl+C**, puis recopiez une commande complète depuis un bloc `powershell`.
+- **Un nombre de points puis `Ouvrir :` s'affichent** : le fichier 3D a été créé. Si le navigateur ne s'ouvre pas automatiquement, ouvrez le fichier HTML indiqué ; son nom dépend de la photo.
+
+Les anciens lanceurs ne sont plus utilisés dans la version courante. Ils peuvent toujours être présents si vous consultez une ancienne révision du projet.
+
 ## Photos : carte de profondeur
 
 Pour une photo :

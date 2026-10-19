@@ -10,22 +10,33 @@ Ouvrez le dossier du projet dans VS Code, puis **Terminal > Nouveau terminal** e
 
 Les commandes appellent directement Python dans `.venv` : aucune activation de l'environnement n'est nécessaire. Le [guide des commandes](docs/COMMANDES.md) regroupe les tests sur photos, vidéos, la comparaison des modèles et la reconstruction 3D.
 
+Copiez seulement les commandes des blocs `powershell`, sans le préfixe du terminal (`PS`, `(.venv)` ou `>>`). Si votre terminal affiche déjà `(.venv)`, ces commandes restent valides. Le contenu d'un ancien lanceur, comme `@echo off` ou `%~dp0`, ne doit pas être collé dans PowerShell.
+
 ## Reconstruction 3D
 
 Une photo peut être convertie en nuage de points coloré, exporté en PLY et exploré dans une visionneuse hors ligne. Placez vos photos dans `inputs/`, puis choisissez la commande correspondant à votre scène :
 
+Pour toutes les photos d'intérieur dans `inputs/`, copiez cette seule ligne :
+
 ```powershell
-# Photos d'interieur
 .\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs" --model indoor --open
+```
 
-# Photos d'exterieur
+Pour les photos d'extérieur :
+
+```powershell
 .\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs" --model outdoor --open
+```
 
-# Demonstration avec une photo publique fournie par le depot officiel
+Pour une démonstration avec une photo publique fournie par le dépôt officiel :
+
+```powershell
 .\.venv\Scripts\python.exe .\reconstruct.py --input ".\source\assets\examples\demo01.jpg" --model outdoor --max-depth 35 --open
 ```
 
 Exécutez une seule de ces commandes selon le cas. Les sorties sont dans `results/3d/`. `--open` ouvre le premier résultat dans votre navigateur.
+
+Les messages `xFormers not available` peuvent apparaître deux fois : cette optimisation facultative est absente, mais le calcul sur CPU continue. Si le programme indique un nombre de points puis `Ouvrir :` suivi d'un fichier HTML, la reconstruction a réussi. Le nom de ce fichier dépend de votre photo ; ne le recopiez pas comme une commande.
 
 ![Nuage de points reconstruit depuis la photo publique d'un escalier intérieur](docs/examples/reconstruction-3d.png)
 

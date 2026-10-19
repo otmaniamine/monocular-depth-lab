@@ -4,7 +4,7 @@ Version de référence : exécution locale des modèles préentraînés sur les 
 
 ## Organisation Git
 
-- `main` conserve la version stable initiale.
+- `main` présente la version courante publiée du projet.
 - Le tag `v1.0.0` désigne exactement cette sauvegarde.
 - La branche `developpement` accueille les prochaines améliorations.
 
@@ -24,13 +24,13 @@ S'il reste des modifications non enregistrées, sauvegardez-les avant de changer
 git stash push -u -m "Travail avant retour a v1.0.0"
 ```
 
-Pour revenir à la branche stable :
+Pour consulter et tester exactement la version de référence, sans commencer de nouvelles modifications :
 
 ```powershell
-git switch main
+git switch --detach v1.0.0
 ```
 
-Pour repartir précisément du tag, même si `main` évolue un jour, créez une nouvelle branche depuis lui :
+Pour développer à partir de cette version de référence, créez plutôt une nouvelle branche depuis le tag :
 
 ```powershell
 git switch -c reprise-v1.0.0 v1.0.0

@@ -4,20 +4,33 @@
 
 Ouvrez le dossier du projet dans VS Code, puis **Terminal > Nouveau terminal**, avec **PowerShell**. Placez vos photos dans `inputs/`. Depuis la racine du projet, exécutez une des commandes ci-dessous selon la scène. Remplacez `photo.jpg` par le nom de votre fichier ; les guillemets permettent d'utiliser des noms contenant des espaces.
 
+Pour une photo d'intérieur :
+
 ```powershell
-# Scène intérieure
 .\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs\photo.jpg" --model indoor --open
+```
 
-# Scène extérieure, en conservant les profondeurs entre 0,1 et 35 mètres estimés
+Pour une photo d'extérieur, en conservant les profondeurs entre 0,1 et 35 mètres estimés :
+
+```powershell
 .\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs\photo.jpg" --model outdoor --max-depth 35 --open
+```
 
-# Reproduire l'exemple de l'escalier intérieur
+Pour reproduire l'exemple de l'escalier intérieur :
+
+```powershell
 .\.venv\Scripts\python.exe .\reconstruct.py --input ".\source\assets\examples\demo15.jpg" --model indoor --open
+```
 
-# Reproduire l'exemple public de rue
+Pour reproduire l'exemple public de rue :
+
+```powershell
 .\.venv\Scripts\python.exe .\reconstruct.py --input ".\source\assets\examples\demo01.jpg" --model outdoor --max-depth 35 --open
+```
 
-# Traiter toutes les photos du dossier inputs avec le modele interieur
+Pour traiter toutes les photos d'intérieur du dossier `inputs/` :
+
+```powershell
 .\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs" --model indoor --open
 ```
 
@@ -28,6 +41,8 @@ Start-Process ".\results\3d\demo15_indoor.html"
 ```
 
 Le [guide des commandes](COMMANDES.md) regroupe aussi les tests 2D, les vidéos et la comparaison des modèles. Aucune activation de `.venv` n'est nécessaire avec ces commandes.
+
+Copiez seulement la commande, sans le préfixe du terminal (`PS`, `(.venv)` ou `>>`) et sans contenu d'ancien lanceur (`@echo off`, `%~dp0`). Les messages `xFormers not available` ne bloquent pas le calcul CPU. Une ligne indiquant le nombre de points, suivie de `Ouvrir :` avec le fichier HTML, confirme la création du résultat. Consultez la section [Comprendre les messages du terminal](COMMANDES.md#comprendre-les-messages-du-terminal) en cas de doute.
 
 Un dossier est accepté, les vidéos ne le sont pas dans cette première version. Chaque photo est reconstruite séparément. Les photos du dossier sont traitées successivement ; elles ne sont pas fusionnées.
 
