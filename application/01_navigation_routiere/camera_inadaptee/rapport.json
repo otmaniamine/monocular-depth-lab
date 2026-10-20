@@ -1,0 +1,386 @@
+[
+  {
+    "application": "route",
+    "source": "camera-laterale.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      288,
+      512
+    ],
+    "camera": {
+      "fx": 347.6467529817257,
+      "fy": 347.6467529817257,
+      "cx": 143.5,
+      "cy": 255.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 45
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "ABSTENTION",
+    "valid_fraction_in_roi": 0.9998642615830116,
+    "roi": [
+      0.05,
+      0.48,
+      0.95,
+      0.98
+    ],
+    "candidates": [],
+    "zones": [],
+    "action": "Verifier la camera et la profondeur avant toute decision.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "reason": "Camera declaree laterale ou inadaptee : vue frontale requise.",
+    "parameters": {
+      "roi": [
+        0.05,
+        0.48,
+        0.95,
+        0.98
+      ],
+      "seed": [
+        0.36,
+        0.78,
+        0.64,
+        0.96
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 1.332,
+    "frame_index": 0,
+    "time_seconds": 0.0,
+    "source_fps": 29.97,
+    "temporal_status": "ABSTENTION"
+  },
+  {
+    "application": "route",
+    "source": "camera-laterale.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      288,
+      512
+    ],
+    "camera": {
+      "fx": 347.6467529817257,
+      "fy": 347.6467529817257,
+      "cx": 143.5,
+      "cy": 255.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 45
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "ABSTENTION",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.05,
+      0.48,
+      0.95,
+      0.98
+    ],
+    "candidates": [],
+    "zones": [],
+    "action": "Verifier la camera et la profondeur avant toute decision.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "reason": "Camera declaree laterale ou inadaptee : vue frontale requise.",
+    "parameters": {
+      "roi": [
+        0.05,
+        0.48,
+        0.95,
+        0.98
+      ],
+      "seed": [
+        0.36,
+        0.78,
+        0.64,
+        0.96
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 1.753,
+    "frame_index": 20,
+    "time_seconds": 0.6673340006673341,
+    "source_fps": 29.97,
+    "temporal_status": "ABSTENTION"
+  },
+  {
+    "application": "route",
+    "source": "camera-laterale.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      288,
+      512
+    ],
+    "camera": {
+      "fx": 347.6467529817257,
+      "fy": 347.6467529817257,
+      "cx": 143.5,
+      "cy": 255.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 45
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "ABSTENTION",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.05,
+      0.48,
+      0.95,
+      0.98
+    ],
+    "candidates": [],
+    "zones": [],
+    "action": "Verifier la camera et la profondeur avant toute decision.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "reason": "Camera declaree laterale ou inadaptee : vue frontale requise.",
+    "parameters": {
+      "roi": [
+        0.05,
+        0.48,
+        0.95,
+        0.98
+      ],
+      "seed": [
+        0.36,
+        0.78,
+        0.64,
+        0.96
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 2.082,
+    "frame_index": 40,
+    "time_seconds": 1.3346680013346681,
+    "source_fps": 29.97,
+    "temporal_status": "ABSTENTION"
+  },
+  {
+    "application": "route",
+    "source": "camera-laterale.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      288,
+      512
+    ],
+    "camera": {
+      "fx": 347.6467529817257,
+      "fy": 347.6467529817257,
+      "cx": 143.5,
+      "cy": 255.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 45
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "ABSTENTION",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.05,
+      0.48,
+      0.95,
+      0.98
+    ],
+    "candidates": [],
+    "zones": [],
+    "action": "Verifier la camera et la profondeur avant toute decision.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "reason": "Camera declaree laterale ou inadaptee : vue frontale requise.",
+    "parameters": {
+      "roi": [
+        0.05,
+        0.48,
+        0.95,
+        0.98
+      ],
+      "seed": [
+        0.36,
+        0.78,
+        0.64,
+        0.96
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 1.817,
+    "frame_index": 60,
+    "time_seconds": 2.002002002002002,
+    "source_fps": 29.97,
+    "temporal_status": "ABSTENTION"
+  },
+  {
+    "application": "route",
+    "source": "camera-laterale.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      288,
+      512
+    ],
+    "camera": {
+      "fx": 347.6467529817257,
+      "fy": 347.6467529817257,
+      "cx": 143.5,
+      "cy": 255.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 45
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "ABSTENTION",
+    "valid_fraction_in_roi": 0.9994872104247104,
+    "roi": [
+      0.05,
+      0.48,
+      0.95,
+      0.98
+    ],
+    "candidates": [],
+    "zones": [],
+    "action": "Verifier la camera et la profondeur avant toute decision.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "reason": "Camera declaree laterale ou inadaptee : vue frontale requise.",
+    "parameters": {
+      "roi": [
+        0.05,
+        0.48,
+        0.95,
+        0.98
+      ],
+      "seed": [
+        0.36,
+        0.78,
+        0.64,
+        0.96
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 1.819,
+    "frame_index": 80,
+    "time_seconds": 2.6693360026693362,
+    "source_fps": 29.97,
+    "temporal_status": "ABSTENTION"
+  },
+  {
+    "application": "route",
+    "source": "camera-laterale.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      288,
+      512
+    ],
+    "camera": {
+      "fx": 347.6467529817257,
+      "fy": 347.6467529817257,
+      "cx": 143.5,
+      "cy": 255.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 45
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "ABSTENTION",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.05,
+      0.48,
+      0.95,
+      0.98
+    ],
+    "candidates": [],
+    "zones": [],
+    "action": "Verifier la camera et la profondeur avant toute decision.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "reason": "Camera declaree laterale ou inadaptee : vue frontale requise.",
+    "parameters": {
+      "roi": [
+        0.05,
+        0.48,
+        0.95,
+        0.98
+      ],
+      "seed": [
+        0.36,
+        0.78,
+        0.64,
+        0.96
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 2.251,
+    "frame_index": 100,
+    "time_seconds": 3.3366700033366703,
+    "source_fps": 29.97,
+    "temporal_status": "ABSTENTION"
+  }
+]

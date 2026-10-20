@@ -1,0 +1,94 @@
+[
+  {
+    "file": "room.jpg",
+    "author": "Curtis Adams",
+    "source_page": "https://www.pexels.com/photo/wooden-floor-inside-the-house-7601090/",
+    "download_url": "https://images.pexels.com/photos/7601090/pexels-photo-7601090.jpeg?auto=compress&cs=tinysrgb&w=1280",
+    "license": "https://www.pexels.com/license/",
+    "accessed": "2026-10-20",
+    "sha256": "9b3aca2b08ed877748a2fbc8da82d9bc23a41161611a6b9eac599ea6574b9f61",
+    "transformation": "Redimensionnement CDN puis reencodage JPEG sans EXIF."
+  },
+  {
+    "file": "warehouse.jpg",
+    "author": "Erwin Salas",
+    "source_page": "https://www.pexels.com/photo/aisle-of-a-huge-store-24862481/",
+    "download_url": "https://images.pexels.com/photos/24862481/pexels-photo-24862481.jpeg?auto=compress&cs=tinysrgb&w=960",
+    "license": "https://www.pexels.com/license/",
+    "accessed": "2026-10-20",
+    "sha256": "185e9f194668b0189f526054dc83f31484ff36fcb4f3305a79015c21b0464489",
+    "transformation": "Redimensionnement CDN puis reencodage JPEG sans EXIF."
+  },
+  {
+    "file": "boxes.jpg",
+    "author": "Freek Wolsink",
+    "source_page": "https://www.pexels.com/photo/industrial-warehouse-with-stacked-cardboard-boxes-34221998/",
+    "download_url": "https://images.pexels.com/photos/34221998/pexels-photo-34221998.jpeg?auto=compress&cs=tinysrgb&w=1280",
+    "license": "https://www.pexels.com/license/",
+    "accessed": "2026-10-20",
+    "sha256": "8c112ce203241800cedc6eb33c0fb5e11a3a29e2e9e069bed395b9898313cd31",
+    "transformation": "Redimensionnement CDN puis reencodage JPEG sans EXIF."
+  },
+  {
+    "file": "street.jpg",
+    "author": "Sami Abdullah",
+    "source_page": "https://www.pexels.com/photo/cars-in-traffic-on-city-road-16666912/",
+    "download_url": "https://images.pexels.com/photos/16666912/pexels-photo-16666912.jpeg?auto=compress&cs=tinysrgb&w=960",
+    "license": "https://www.pexels.com/license/",
+    "accessed": "2026-10-20",
+    "sha256": "cdb288d1a492bb7dd722d90c4adc8378bf4666a71c0911622690503a6c145d83",
+    "transformation": "Redimensionnement CDN puis reencodage JPEG sans EXIF."
+  },
+  {
+    "file": "dashcam.mp4",
+    "author": "German Korb",
+    "source_page": "https://www.pexels.com/video/dash-cam-footage-in-city-driving-4644521/",
+    "download_url": "https://videos.pexels.com/video-files/4644521/4644521-uhd_2562_1440_30fps.mp4",
+    "license": "https://www.pexels.com/license/",
+    "accessed": "2026-10-20",
+    "sha256": "94093d6ef88545b6f13512cdf876638fc4d583e2db6279db69f1c23cf4b91360",
+    "frames": 180,
+    "fps": 29.97002997002997,
+    "duration_seconds": 6.006,
+    "transformation": "Extrait initial, redimensionne, sans audio ni metadonnees de la source."
+  },
+  {
+    "file": "dashcam.jpg",
+    "author": "German Korb",
+    "source_page": "https://www.pexels.com/video/dash-cam-footage-in-city-driving-4644521/",
+    "download_url": "https://videos.pexels.com/video-files/4644521/4644521-uhd_2562_1440_30fps.mp4",
+    "license": "https://www.pexels.com/license/",
+    "accessed": "2026-10-20",
+    "sha256": "af16a89dbe81441f5906fd91fec0aa946f2ba178ebefe652fc4a4fd07751d1d6",
+    "frames": 180,
+    "fps": 29.97002997002997,
+    "duration_seconds": 6.006,
+    "transformation": "Premiere image du meme extrait video."
+  },
+  {
+    "file": "camera-laterale.mp4",
+    "author": "Teju",
+    "source_page": "https://www.pexels.com/video/a-person-is-driving-down-the-road-with-a-car-19713833/",
+    "download_url": "https://videos.pexels.com/video-files/19713833/19713833-hd_1080_1920_30fps.mp4",
+    "license": "https://www.pexels.com/license/",
+    "accessed": "2026-10-20",
+    "sha256": "6210c651671e5525dde465d6bc6664f1040b2d1e97ad88658d1103c8bd2a5f03",
+    "frames": 120,
+    "fps": 29.97002997002997,
+    "duration_seconds": 4.0040000000000004,
+    "transformation": "Extrait initial, redimensionne, sans audio ni metadonnees de la source."
+  },
+  {
+    "file": "camera-laterale.jpg",
+    "author": "Teju",
+    "source_page": "https://www.pexels.com/video/a-person-is-driving-down-the-road-with-a-car-19713833/",
+    "download_url": "https://videos.pexels.com/video-files/19713833/19713833-hd_1080_1920_30fps.mp4",
+    "license": "https://www.pexels.com/license/",
+    "accessed": "2026-10-20",
+    "sha256": "c6c8db1bca617a792ac9977deb2a6577987fba6a38cef9e3f229415d7968c962",
+    "frames": 120,
+    "fps": 29.97002997002997,
+    "duration_seconds": 4.0040000000000004,
+    "transformation": "Premiere image du meme extrait video."
+  }
+]

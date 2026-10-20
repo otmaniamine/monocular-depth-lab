@@ -1,0 +1,46 @@
+[
+  {
+    "application": "entreprise",
+    "source": "room.jpg",
+    "model": "indoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      512
+    ],
+    "camera": {
+      "fx": 457.6333795561767,
+      "fy": 457.6333795561767,
+      "cx": 383.5,
+      "cy": 255.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 80
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "Gabarit cubique illustratif, pas un modele catalogue ni une preuve de dimensions.",
+      "Ancrage manuel sur le sol, volume aligne aux axes camera ; camera supposee approximativement horizontale."
+    ],
+    "status": "GABARIT_PRODUIT",
+    "volume": {
+      "anchor_normalized": [
+        0.72,
+        0.87
+      ],
+      "dimensions_assumed_m": [
+        0.8,
+        0.7,
+        0.55
+      ],
+      "virtual_pixels": 8382,
+      "visible_pixels": 7098,
+      "occluded_or_unknown_pixels": 1284,
+      "anchor_depth_estimated_m": 4.294626235961914
+    },
+    "action": "Comparer visuellement cet emplacement puis mesurer et calibrer avant tout achat.",
+    "processing_seconds": 1.966
+  }
+]

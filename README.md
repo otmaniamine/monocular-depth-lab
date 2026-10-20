@@ -12,6 +12,16 @@ Les commandes appellent directement Python dans `.venv` : aucune activation de l
 
 Copiez seulement les commandes des blocs `powershell`, sans le préfixe du terminal (`PS`, `(.venv)` ou `>>`). Si votre terminal affiche déjà `(.venv)`, ces commandes restent valides. Le contenu d'un ancien lanceur, comme `@echo off` ou `%~dp0`, ne doit pas être collé dans PowerShell.
 
+## Applications pratiques
+
+Le dossier [application/](application/README.md) contient cinq démonstrations : perception routière et analyse vidéo, robot aspirateur, flou photographique, prévisualisation de meuble pour une entreprise et inspection de passage industriel. Chaque démonstration inclut des médias réels crédités, un résultat visuel et un rapport d'actions proposées.
+
+```powershell
+.\.venv\Scripts\python.exe -m application.run --demo all
+```
+
+Les rapports sont dans `results/application/`. Les usages de navigation sont des simulations hors ligne avec abstention possible, sans commande d'un véhicule ou d'une machine.
+
 ## Reconstruction 3D
 
 Une photo peut être convertie en nuage de points coloré, exporté en PLY et exploré dans une visionneuse hors ligne. Placez vos photos dans `inputs/`, puis choisissez la commande correspondant à votre scène :

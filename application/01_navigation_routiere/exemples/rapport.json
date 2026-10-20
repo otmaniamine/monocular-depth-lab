@@ -1,0 +1,118 @@
+[
+  {
+    "application": "route",
+    "source": "street.jpg",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      432,
+      768
+    ],
+    "camera": {
+      "fx": 521.4701294725885,
+      "fy": 521.4701294725885,
+      "cx": 215.5,
+      "cy": 383.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 45
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "ALERTE_SIMULEE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.05,
+      0.48,
+      0.95,
+      0.98
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          240,
+          391,
+          170,
+          234
+        ],
+        "pixels": 17777,
+        "depth_p10_estimated_m": 8.700844764709473,
+        "depth_median_estimated_m": 11.319278717041016
+      },
+      {
+        "box_xywh": [
+          21,
+          399,
+          125,
+          353
+        ],
+        "pixels": 22015,
+        "depth_p10_estimated_m": 4.934470176696777,
+        "depth_median_estimated_m": 6.056658744812012
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 22015,
+        "depth_p10_estimated_m": 4.934470176696777
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 2453,
+        "depth_p10_estimated_m": 18.299989700317383
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 15324,
+        "depth_p10_estimated_m": 8.649099349975586
+      }
+    ],
+    "action": "Dans le simulateur : suspendre la progression et demander une confirmation humaine.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        -0.0024049253573913444,
+        -0.9977735293571913,
+        -0.06664983456933649
+      ],
+      "offset": 4.971023138525369,
+      "seed_inlier_fraction": 1.0,
+      "residual_p90_estimated_m": 0.026592272771876414,
+      "seed": [
+        0.36,
+        0.78,
+        0.64,
+        0.96
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surface saillante proche dans la zone choisie.",
+    "parameters": {
+      "roi": [
+        0.05,
+        0.48,
+        0.95,
+        0.98
+      ],
+      "seed": [
+        0.36,
+        0.78,
+        0.64,
+        0.96
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 2.955
+  }
+]
