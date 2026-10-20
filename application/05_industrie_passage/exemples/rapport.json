@@ -1,0 +1,118 @@
+[
+  {
+    "application": "industrie",
+    "source": "boxes.jpg",
+    "model": "indoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      512
+    ],
+    "camera": {
+      "fx": 602.7592616131162,
+      "fy": 602.7592616131162,
+      "cx": 383.5,
+      "cy": 255.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 65
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "ALERTE_SIMULEE",
+    "valid_fraction_in_roi": 0.9894701086956522,
+    "roi": [
+      0.15,
+      0.35,
+      0.9,
+      0.98
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          420,
+          179,
+          271,
+          301
+        ],
+        "pixels": 77031,
+        "depth_p10_estimated_m": 3.7172882556915283,
+        "depth_median_estimated_m": 3.8993003368377686
+      },
+      {
+        "box_xywh": [
+          115,
+          233,
+          37,
+          152
+        ],
+        "pixels": 4957,
+        "depth_p10_estimated_m": 6.40378999710083,
+        "depth_median_estimated_m": 6.52231502532959
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 4957,
+        "depth_p10_estimated_m": 6.40378999710083
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 20221,
+        "depth_p10_estimated_m": 4.0099358558654785
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 56810,
+        "depth_p10_estimated_m": 3.688991069793701
+      }
+    ],
+    "action": "Demander une inspection du passage et deplacer les objets confirmes genants avant circulation.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        0.031720631411518894,
+        -0.9979071260860517,
+        0.056348640174641806
+      ],
+      "offset": 1.1707767174205008,
+      "seed_inlier_fraction": 1.0,
+      "residual_p90_estimated_m": 0.021837797603302445,
+      "seed": [
+        0.19,
+        0.77,
+        0.5,
+        0.96
+      ],
+      "tolerance_estimated_m": 0.08
+    },
+    "reason": "Surface saillante proche dans la zone choisie.",
+    "parameters": {
+      "roi": [
+        0.15,
+        0.35,
+        0.9,
+        0.98
+      ],
+      "seed": [
+        0.19,
+        0.77,
+        0.5,
+        0.96
+      ],
+      "tolerance": 0.08,
+      "min_height": 0.15,
+      "max_height": 3.0,
+      "watch_distance": 8.0,
+      "alert_distance": 5.0
+    },
+    "processing_seconds": 2.608
+  }
+]

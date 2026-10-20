@@ -1,0 +1,67 @@
+[
+  {
+    "application": "route",
+    "status": "ALERTE_SIMULEE",
+    "action": "Dans le simulateur : suspendre la progression et demander une confirmation humaine.",
+    "components": 2,
+    "source": "street.jpg"
+  },
+  {
+    "application": "robot",
+    "status": "VIGILANCE",
+    "action": "Examiner les zones annotees et confirmer avec une autre vue.",
+    "components": 3,
+    "source": "room.jpg"
+  },
+  {
+    "application": "photo",
+    "status": "EFFET_PRODUIT",
+    "action": "Ajuster --focus X Y pour choisir le sujet a conserver net.",
+    "components": 0,
+    "source": "room.jpg"
+  },
+  {
+    "application": "entreprise",
+    "status": "GABARIT_PRODUIT",
+    "action": "Comparer visuellement cet emplacement puis mesurer et calibrer avant tout achat.",
+    "components": 0,
+    "source": "room.jpg"
+  },
+  {
+    "application": "industrie",
+    "status": "ALERTE_SIMULEE",
+    "action": "Demander une inspection du passage et deplacer les objets confirmes genants avant circulation.",
+    "components": 2,
+    "source": "boxes.jpg"
+  },
+  {
+    "application": "video_route",
+    "views": 12,
+    "statuses": {
+      "ALERTE_SIMULEE": 3,
+      "VIGILANCE": 9
+    },
+    "temporal_statuses": {
+      "ALERTE_A_CONFIRMER": 3,
+      "VIGILANCE": 9
+    }
+  },
+  {
+    "application": "video_camera_laterale",
+    "views": 6,
+    "statuses": {
+      "ABSTENTION": 6
+    },
+    "temporal_statuses": {
+      "ABSTENTION": 6
+    }
+  },
+  {
+    "application": "industrie_allee",
+    "views": 1,
+    "statuses": {
+      "VIGILANCE": 1
+    },
+    "temporal_statuses": {}
+  }
+]

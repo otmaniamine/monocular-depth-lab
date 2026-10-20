@@ -1,0 +1,1475 @@
+[
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "VIGILANCE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          523,
+          295,
+          183,
+          111
+        ],
+        "pixels": 8537,
+        "depth_p10_estimated_m": 14.698722839355469,
+        "depth_median_estimated_m": 19.093305587768555
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 0,
+        "depth_p10_estimated_m": null
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 0,
+        "depth_p10_estimated_m": null
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 8537,
+        "depth_p10_estimated_m": 14.698722839355469
+      }
+    ],
+    "action": "Examiner les zones annotees et confirmer avec une autre vue.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        0.035809759717259415,
+        -0.9887316428647899,
+        0.1453526728577269
+      ],
+      "offset": 2.829295764667614,
+      "seed_inlier_fraction": 0.9554655870445344,
+      "residual_p90_estimated_m": 0.0805338813735017,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surfaces saillantes dans la zone surveillee.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 3.632,
+    "frame_index": 0,
+    "time_seconds": 0.0,
+    "source_fps": 29.97,
+    "temporal_status": "VIGILANCE"
+  },
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "VIGILANCE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          61,
+          282,
+          227,
+          104
+        ],
+        "pixels": 18002,
+        "depth_p10_estimated_m": 13.645172119140625,
+        "depth_median_estimated_m": 17.03708267211914
+      },
+      {
+        "box_xywh": [
+          617,
+          303,
+          89,
+          59
+        ],
+        "pixels": 2102,
+        "depth_p10_estimated_m": 20.4254207611084,
+        "depth_median_estimated_m": 22.677223205566406
+      },
+      {
+        "box_xywh": [
+          535,
+          344,
+          137,
+          42
+        ],
+        "pixels": 1037,
+        "depth_p10_estimated_m": 15.605502128601074,
+        "depth_median_estimated_m": 19.28809928894043
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 17524,
+        "depth_p10_estimated_m": 13.634154319763184
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 478,
+        "depth_p10_estimated_m": 19.120038986206055
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 3139,
+        "depth_p10_estimated_m": 17.628385543823242
+      }
+    ],
+    "action": "Examiner les zones annotees et confirmer avec une autre vue.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        0.01799430196755185,
+        -0.9896818032072692,
+        0.14214827996535429
+      ],
+      "offset": 2.9030961689861345,
+      "seed_inlier_fraction": 0.9966261808367072,
+      "residual_p90_estimated_m": 0.07043863944722961,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surfaces saillantes dans la zone surveillee.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 2.87,
+    "frame_index": 15,
+    "time_seconds": 0.5005005005005005,
+    "source_fps": 29.97,
+    "temporal_status": "VIGILANCE"
+  },
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "ALERTE_SIMULEE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          61,
+          304,
+          94,
+          102
+        ],
+        "pixels": 7959,
+        "depth_p10_estimated_m": 7.1340250968933105,
+        "depth_median_estimated_m": 8.078524589538574
+      },
+      {
+        "box_xywh": [
+          508,
+          310,
+          198,
+          96
+        ],
+        "pixels": 4721,
+        "depth_p10_estimated_m": 11.984423637390137,
+        "depth_median_estimated_m": 19.479875564575195
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 7959,
+        "depth_p10_estimated_m": 7.1340250968933105
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 0,
+        "depth_p10_estimated_m": null
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 4721,
+        "depth_p10_estimated_m": 11.984423637390137
+      }
+    ],
+    "action": "Dans le simulateur : suspendre la progression et demander une confirmation humaine.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        0.01151903229344163,
+        -0.9910124923018852,
+        0.1332724727639909
+      ],
+      "offset": 2.9200069280370493,
+      "seed_inlier_fraction": 0.9966261808367072,
+      "residual_p90_estimated_m": 0.05315614524617863,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surface saillante proche dans la zone choisie.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 2.233,
+    "frame_index": 30,
+    "time_seconds": 1.001001001001001,
+    "source_fps": 29.97,
+    "temporal_status": "ALERTE_A_CONFIRMER"
+  },
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "ALERTE_SIMULEE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          64,
+          296,
+          230,
+          63
+        ],
+        "pixels": 10296,
+        "depth_p10_estimated_m": 18.216278076171875,
+        "depth_median_estimated_m": 20.053497314453125
+      },
+      {
+        "box_xywh": [
+          531,
+          300,
+          175,
+          106
+        ],
+        "pixels": 6803,
+        "depth_p10_estimated_m": 7.982295513153076,
+        "depth_median_estimated_m": 9.371026039123535
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 9725,
+        "depth_p10_estimated_m": 18.18262481689453
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 571,
+        "depth_p10_estimated_m": 21.874847412109375
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 6803,
+        "depth_p10_estimated_m": 7.982295513153076
+      }
+    ],
+    "action": "Dans le simulateur : suspendre la progression et demander une confirmation humaine.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        0.004962451017328907,
+        -0.9897278358377349,
+        0.14287821754156238
+      ],
+      "offset": 2.7946926081836265,
+      "seed_inlier_fraction": 0.9831309041835358,
+      "residual_p90_estimated_m": 0.08495213789032512,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surface saillante proche dans la zone choisie.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 2.369,
+    "frame_index": 45,
+    "time_seconds": 1.5015015015015016,
+    "source_fps": 29.97,
+    "temporal_status": "ALERTE_A_CONFIRMER"
+  },
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "VIGILANCE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          571,
+          283,
+          135,
+          123
+        ],
+        "pixels": 13219,
+        "depth_p10_estimated_m": 8.345551490783691,
+        "depth_median_estimated_m": 9.947051048278809
+      },
+      {
+        "box_xywh": [
+          61,
+          292,
+          173,
+          114
+        ],
+        "pixels": 18104,
+        "depth_p10_estimated_m": 8.54151725769043,
+        "depth_median_estimated_m": 10.72614860534668
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 18104,
+        "depth_p10_estimated_m": 8.54151725769043
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 0,
+        "depth_p10_estimated_m": null
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 13219,
+        "depth_p10_estimated_m": 8.345551490783691
+      }
+    ],
+    "action": "Examiner les zones annotees et confirmer avec une autre vue.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        0.003054473209288403,
+        -0.990297698780042,
+        0.13892853552948226
+      ],
+      "offset": 2.895477849569847,
+      "seed_inlier_fraction": 0.9858299595141701,
+      "residual_p90_estimated_m": 0.09243666855429966,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surfaces saillantes dans la zone surveillee.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 2.325,
+    "frame_index": 60,
+    "time_seconds": 2.002002002002002,
+    "source_fps": 29.97,
+    "temporal_status": "VIGILANCE"
+  },
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "VIGILANCE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          529,
+          284,
+          177,
+          122
+        ],
+        "pixels": 18951,
+        "depth_p10_estimated_m": 8.218231201171875,
+        "depth_median_estimated_m": 9.851743698120117
+      },
+      {
+        "box_xywh": [
+          117,
+          299,
+          99,
+          45
+        ],
+        "pixels": 3476,
+        "depth_p10_estimated_m": 22.013912200927734,
+        "depth_median_estimated_m": 23.054481506347656
+      },
+      {
+        "box_xywh": [
+          219,
+          303,
+          64,
+          41
+        ],
+        "pixels": 2088,
+        "depth_p10_estimated_m": 23.015350341796875,
+        "depth_median_estimated_m": 23.804710388183594
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 5391,
+        "depth_p10_estimated_m": 22.162153244018555
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 173,
+        "depth_p10_estimated_m": 24.287460327148438
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 18951,
+        "depth_p10_estimated_m": 8.218231201171875
+      }
+    ],
+    "action": "Examiner les zones annotees et confirmer avec une autre vue.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        0.010778122335953358,
+        -0.9895540663759943,
+        0.14375876250735398
+      ],
+      "offset": 2.83631058336309,
+      "seed_inlier_fraction": 0.9865047233468286,
+      "residual_p90_estimated_m": 0.07717860517585753,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surfaces saillantes dans la zone surveillee.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 2.09,
+    "frame_index": 75,
+    "time_seconds": 2.5025025025025025,
+    "source_fps": 29.97,
+    "temporal_status": "VIGILANCE"
+  },
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "VIGILANCE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          499,
+          286,
+          207,
+          120
+        ],
+        "pixels": 22209,
+        "depth_p10_estimated_m": 8.807530403137207,
+        "depth_median_estimated_m": 10.41517162322998
+      },
+      {
+        "box_xywh": [
+          61,
+          291,
+          193,
+          115
+        ],
+        "pixels": 17808,
+        "depth_p10_estimated_m": 10.937692642211914,
+        "depth_median_estimated_m": 12.146428108215332
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 17808,
+        "depth_p10_estimated_m": 10.937692642211914
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 0,
+        "depth_p10_estimated_m": null
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 22209,
+        "depth_p10_estimated_m": 8.807530403137207
+      }
+    ],
+    "action": "Examiner les zones annotees et confirmer avec une autre vue.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        0.01294920885744323,
+        -0.9898045370375661,
+        0.141842505793629
+      ],
+      "offset": 2.8389425932414216,
+      "seed_inlier_fraction": 0.9979757085020243,
+      "residual_p90_estimated_m": 0.06868561363408193,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surfaces saillantes dans la zone surveillee.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 3.167,
+    "frame_index": 90,
+    "time_seconds": 3.0030030030030033,
+    "source_fps": 29.97,
+    "temporal_status": "VIGILANCE"
+  },
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "VIGILANCE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          475,
+          286,
+          231,
+          116
+        ],
+        "pixels": 21551,
+        "depth_p10_estimated_m": 11.822999954223633,
+        "depth_median_estimated_m": 12.789997100830078
+      },
+      {
+        "box_xywh": [
+          61,
+          296,
+          131,
+          60
+        ],
+        "pixels": 6009,
+        "depth_p10_estimated_m": 17.99564552307129,
+        "depth_median_estimated_m": 19.692394256591797
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 6009,
+        "depth_p10_estimated_m": 17.99564552307129
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 653,
+        "depth_p10_estimated_m": 17.832082748413086
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 20898,
+        "depth_p10_estimated_m": 11.815122604370117
+      }
+    ],
+    "action": "Examiner les zones annotees et confirmer avec une autre vue.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        0.01547829889103173,
+        -0.9898366700162105,
+        0.14136402991800878
+      ],
+      "offset": 2.8531326230538148,
+      "seed_inlier_fraction": 0.9878542510121457,
+      "residual_p90_estimated_m": 0.04839017866990219,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surfaces saillantes dans la zone surveillee.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 3.407,
+    "frame_index": 105,
+    "time_seconds": 3.5035035035035036,
+    "source_fps": 29.97,
+    "temporal_status": "VIGILANCE"
+  },
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "VIGILANCE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          459,
+          284,
+          247,
+          102
+        ],
+        "pixels": 13941,
+        "depth_p10_estimated_m": 15.03898811340332,
+        "depth_median_estimated_m": 16.13998794555664
+      },
+      {
+        "box_xywh": [
+          158,
+          292,
+          132,
+          79
+        ],
+        "pixels": 8313,
+        "depth_p10_estimated_m": 15.169031143188477,
+        "depth_median_estimated_m": 16.016454696655273
+      },
+      {
+        "box_xywh": [
+          126,
+          314,
+          30,
+          23
+        ],
+        "pixels": 390,
+        "depth_p10_estimated_m": 23.98856544494629,
+        "depth_median_estimated_m": 24.292226791381836
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 8173,
+        "depth_p10_estimated_m": 15.165228843688965
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 2015,
+        "depth_p10_estimated_m": 18.566051483154297
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 12456,
+        "depth_p10_estimated_m": 15.018869400024414
+      }
+    ],
+    "action": "Examiner les zones annotees et confirmer avec une autre vue.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        0.011143313752110284,
+        -0.9898678447451115,
+        0.14155379365559195
+      ],
+      "offset": 2.7948658242484345,
+      "seed_inlier_fraction": 0.9912280701754386,
+      "residual_p90_estimated_m": 0.05260596799671182,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surfaces saillantes dans la zone surveillee.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 3.134,
+    "frame_index": 120,
+    "time_seconds": 4.004004004004004,
+    "source_fps": 29.97,
+    "temporal_status": "VIGILANCE"
+  },
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "ALERTE_SIMULEE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          684,
+          282,
+          22,
+          79
+        ],
+        "pixels": 705,
+        "depth_p10_estimated_m": 17.135204315185547,
+        "depth_median_estimated_m": 17.937210083007812
+      },
+      {
+        "box_xywh": [
+          448,
+          284,
+          249,
+          96
+        ],
+        "pixels": 8633,
+        "depth_p10_estimated_m": 16.69259262084961,
+        "depth_median_estimated_m": 17.796667098999023
+      },
+      {
+        "box_xywh": [
+          61,
+          292,
+          144,
+          114
+        ],
+        "pixels": 14809,
+        "depth_p10_estimated_m": 7.215203285217285,
+        "depth_median_estimated_m": 8.523810386657715
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 14809,
+        "depth_p10_estimated_m": 7.215203285217285
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 2237,
+        "depth_p10_estimated_m": 18.13661003112793
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 7101,
+        "depth_p10_estimated_m": 16.62582015991211
+      }
+    ],
+    "action": "Dans le simulateur : suspendre la progression et demander une confirmation humaine.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        0.0007812573112183736,
+        -0.9904103924105372,
+        0.13815442172518166
+      ],
+      "offset": 2.8255437800993146,
+      "seed_inlier_fraction": 0.979757085020243,
+      "residual_p90_estimated_m": 0.04697105431511819,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surface saillante proche dans la zone choisie.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 2.513,
+    "frame_index": 135,
+    "time_seconds": 4.504504504504505,
+    "source_fps": 29.97,
+    "temporal_status": "ALERTE_A_CONFIRMER"
+  },
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "VIGILANCE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          448,
+          283,
+          83,
+          62
+        ],
+        "pixels": 4291,
+        "depth_p10_estimated_m": 20.45293426513672,
+        "depth_median_estimated_m": 21.68412971496582
+      },
+      {
+        "box_xywh": [
+          124,
+          304,
+          73,
+          41
+        ],
+        "pixels": 2414,
+        "depth_p10_estimated_m": 22.9536190032959,
+        "depth_median_estimated_m": 23.550613403320312
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 2414,
+        "depth_p10_estimated_m": 22.9536190032959
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 2101,
+        "depth_p10_estimated_m": 21.239913940429688
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 2190,
+        "depth_p10_estimated_m": 20.276752471923828
+      }
+    ],
+    "action": "Examiner les zones annotees et confirmer avec une autre vue.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        -0.008341235829446588,
+        -0.9906138437489248,
+        0.13643546590904365
+      ],
+      "offset": 2.857533423722937,
+      "seed_inlier_fraction": 0.9777327935222672,
+      "residual_p90_estimated_m": 0.05251114640917765,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surfaces saillantes dans la zone surveillee.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 2.878,
+    "frame_index": 150,
+    "time_seconds": 5.005005005005005,
+    "source_fps": 29.97,
+    "temporal_status": "VIGILANCE"
+  },
+  {
+    "application": "route",
+    "source": "dashcam.mp4",
+    "model": "outdoor",
+    "algorithm_version": "application-v1",
+    "image_size": [
+      768,
+      432
+    ],
+    "camera": {
+      "fx": 500.438543171023,
+      "fy": 500.438543171023,
+      "cx": 383.5,
+      "cy": 215.5,
+      "estimated": true,
+      "principal_point_assumed": true,
+      "assumed_horizontal_fov_degrees": 75.0
+    },
+    "limits": [
+      "Profondeur monoculaire estimee et focale supposee ; echelle non validee.",
+      "Demonstration hors ligne, aucune commande de vehicule ou de machine.",
+      "Surfaces visibles uniquement ; erreurs possibles sur verre, reflets et objets fins.",
+      "La zone verte doit contenir un sol approximativement plan, choisi par l utilisateur.",
+      "Le masque est geometrique : il ne reconnait pas voitures, personnes ou cartons.",
+      "A_CONFIRMER ne signifie jamais passage libre ; marches et trous non detectes."
+    ],
+    "status": "VIGILANCE",
+    "valid_fraction_in_roi": 1.0,
+    "roi": [
+      0.08,
+      0.42,
+      0.92,
+      0.94
+    ],
+    "candidates": [
+      {
+        "box_xywh": [
+          448,
+          291,
+          58,
+          48
+        ],
+        "pixels": 2035,
+        "depth_p10_estimated_m": 23.372282028198242,
+        "depth_median_estimated_m": 24.266080856323242
+      },
+      {
+        "box_xywh": [
+          61,
+          298,
+          95,
+          78
+        ],
+        "pixels": 5817,
+        "depth_p10_estimated_m": 15.518305778503418,
+        "depth_median_estimated_m": 17.501314163208008
+      }
+    ],
+    "zones": [
+      {
+        "zone": "gauche",
+        "candidate_pixels": 5817,
+        "depth_p10_estimated_m": 15.518305778503418
+      },
+      {
+        "zone": "centre",
+        "candidate_pixels": 1455,
+        "depth_p10_estimated_m": 23.608610153198242
+      },
+      {
+        "zone": "droite",
+        "candidate_pixels": 580,
+        "depth_p10_estimated_m": 23.21591567993164
+      }
+    ],
+    "action": "Examiner les zones annotees et confirmer avec une autre vue.",
+    "interpretation": "Candidats geometriques, sans reconnaissance de classe ni preuve de passage libre.",
+    "floor": {
+      "normal": [
+        -0.010172101386171558,
+        -0.9907390705690726,
+        0.1353980147613677
+      ],
+      "offset": 2.865635145457279,
+      "seed_inlier_fraction": 0.9757085020242915,
+      "residual_p90_estimated_m": 0.05409570786859441,
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance_estimated_m": 0.15
+    },
+    "reason": "Surfaces saillantes dans la zone surveillee.",
+    "parameters": {
+      "roi": [
+        0.08,
+        0.42,
+        0.92,
+        0.94
+      ],
+      "seed": [
+        0.38,
+        0.75,
+        0.6,
+        0.93
+      ],
+      "tolerance": 0.15,
+      "min_height": 0.25,
+      "max_height": 3.0,
+      "watch_distance": 25.0,
+      "alert_distance": 8.0
+    },
+    "processing_seconds": 2.709,
+    "frame_index": 165,
+    "time_seconds": 5.505505505505505,
+    "source_fps": 29.97,
+    "temporal_status": "VIGILANCE"
+  }
+]
