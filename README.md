@@ -1,4 +1,6 @@
-# Test local de profondeur, sans entraînement
+# Monocular Depth Lab — profondeur, reconstruction 3D et applications
+
+À partir d'une photo ou d'une vidéo, ce projet estime la profondeur, reconstruit les surfaces visibles en 3D et applique ces résultats à cinq cas pratiques. Il fonctionne localement sur CPU avec des modèles préentraînés, sans entraînement supplémentaire.
 
 Voir l'[organisation des dossiers et fichiers](docs/STRUCTURE.md) pour retrouver les commandes, les applications, les exemples publics et les données locales.
 
@@ -18,11 +20,79 @@ Copiez seulement les commandes des blocs `powershell`, sans le préfixe du termi
 
 Le dossier [application/](application/README.md) contient cinq démonstrations : perception routière et analyse vidéo, robot aspirateur, flou photographique, prévisualisation de meuble pour une entreprise et inspection de passage industriel. Chaque démonstration inclut des médias réels crédités, un résultat visuel et un rapport d'actions proposées.
 
+| Application | Traitement ajouté | Résultat produit |
+|---|---|---|
+| [Navigation routière](application/01_navigation_routiere/README.md) | Surfaces saillantes et analyse d'une vidéo frontale | Secteurs annotés, alertes simulées et chronologie |
+| [Robot aspirateur](application/02_robot_aspirateur/README.md) | Estimation du sol et surveillance des surfaces au-dessus du sol | Candidats géométriques et proposition de vérification |
+| [Traitement d'image](application/03_traitement_image/README.md) | Mise au point choisie et flou selon la profondeur | Photo retouchée et masque d'intensité du flou |
+| [Entreprise : aménagement](application/04_entreprise_amenagement/README.md) | Projection d'un gabarit de meuble avec occlusion | Prévisualisation d'un emplacement à confirmer par des mesures |
+| [Industrie : passage](application/05_industrie_passage/README.md) | Inspection d'une zone dans un entrepôt | Surfaces à examiner et rapport d'action proposé |
+
+### Consulter les résultats déjà calculés
+
+Les exemples publics sont inclus dans le dépôt. Depuis la racine du projet, ouvrir la galerie hors ligne :
+
+```powershell
+Start-Process ".\application\index.html"
+```
+
+La galerie contient les cinq applications et une vidéo routière annotée. Aucun serveur ni calcul du modèle n'est nécessaire pour consulter ces résultats. Sur GitHub, les images et les rapports sont accessibles depuis les liens du tableau ci-dessus ; la galerie HTML s'ouvre localement dans un navigateur.
+
+![Inspection d'un stockage réel de cartons : photo, profondeur et surfaces candidates](application/05_industrie_passage/exemples/vue_001_comparaison.jpg)
+
+![Retouche photographique guidée par la profondeur](application/03_traitement_image/exemples/vue_001_comparaison.jpg)
+
+### Relancer les applications
+
+Exécuter les cinq démonstrations sur les photos publiques fournies :
+
 ```powershell
 .\.venv\Scripts\python.exe -m application.run --demo all
 ```
 
-Les rapports sont dans `results/application/`. Les usages de navigation sont des simulations hors ligne avec abstention possible, sans commande d'un véhicule ou d'une machine.
+Les nouveaux résultats sont dans `results/application/` : images de comparaison, masques, profondeurs brutes, `rapport.json`, `RAPPORT.md` et `index.html`. L'analyse vidéo ajoute une vidéo annotée en MP4 et WebM ainsi qu'une chronologie CSV. `--demo all` traite les cinq exemples photographiques ; la commande de la vidéo frontale est dans le [guide de navigation](application/01_navigation_routiere/README.md).
+
+Pour une photo personnelle et une vidéo, placer les fichiers dans `inputs/`, puis adapter les noms :
+
+```powershell
+.\.venv\Scripts\python.exe -m application.run --app robot --input ".\inputs\salon.jpg"
+.\.venv\Scripts\python.exe -m application.run --app route --input ".\inputs\trajet.mp4" --every 10 --max-frames 30
+```
+
+Chaque commande est indépendante. Les applications acceptent un fichier à la fois ; les modes `photo` et `entreprise` traitent uniquement les photos. Le [guide des applications](application/README.md) explique les réglages de zone surveillée, de sol, de mise au point et de gabarit.
+
+### Résultats observés et limites
+
+La vidéo routière d'exemple comprend douze vues analysées : neuf états de vigilance et trois alertes individuelles à confirmer. La scène de cartons produit une alerte simulée. Ces sorties illustrent le traitement ; elles ne mesurent pas sa précision. Les observations, les omissions et les prochaines étapes sont consignées dans le [bilan des essais réels](application/docs/BILAN.md).
+
+Les usages de navigation sont des prototypes hors ligne avec abstention possible, sans commande d'un véhicule, d'un aspirateur ou d'une machine. Les régions signalées sont des surfaces géométriques, pas des objets reconnus. Les distances et la focale sont estimées ; l'absence de candidat ne garantit pas un passage libre. Le traitement ne détecte pas les trous et les marches descendantes.
+
+Les photos et vidéos publiques, leurs auteurs et leurs licences sont détaillés dans les [sources et crédits](application/docs/SOURCES.md) et le [manifeste des médias](application/assets/SOURCES.json).
+
+## Organisation des dossiers
+
+| Emplacement | Contenu |
+|---|---|
+| `depth.py`, `reconstruct.py` | Commandes principales de profondeur et de reconstruction |
+| `application/run.py`, `application/geometry.py` | Exécution des applications et traitements communs |
+| `application/01_.../` à `application/05_.../` | Guides et exemples publics de chaque application |
+| `application/assets/` | Photos et courts extraits publics crédités |
+| `application/docs/` | Bilan des essais, sources et synthèse JSON |
+| `application/tools/` | Outils de préparation des médias et de la galerie |
+| `docs/`, `tests/` | Documentation générale et vérifications |
+| `inputs/`, `results/` | Médias personnels et résultats de travail, conservés localement |
+
+Les outils de préparation se lancent avec `python -m application.tools.prepare_assets` et `python -m application.tools.build_examples`, en utilisant le Python de `.venv` comme indiqué dans le [guide des applications](application/README.md). L'[arborescence détaillée](docs/STRUCTURE.md) distingue aussi les dépôts de modèles, l'environnement et les sauvegardes locales.
+
+## Vérifications
+
+Les onze tests numériques couvrent la géométrie 3D, la distinction sol/relief sur des scènes synthétiques, l'abstention, le filtre temporel, le flou, l'occlusion et la sélection des exemples publics :
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py" -v
+```
+
+La galerie a également été vérifiée dans un navigateur sur ordinateur et au format mobile, avec lecture de la vidéo WebM. Ces vérifications ne remplacent pas une évaluation sur des scènes annotées ou des distances de référence.
 
 ## Reconstruction 3D
 
@@ -118,4 +188,4 @@ Les dépôts originaux sont dans `source` et `midas`. Les modèles sont dans leu
 
 ## Fichiers locaux et publication
 
-`inputs/` contient les médias à traiter, et `results/` les sorties. Les médias personnels, résultats locaux, poids, environnements Python et sauvegardes sont exclus de Git. Seul `inputs/README.md` est publié pour documenter le dossier d'entrée. Les illustrations publiques sélectionnées sont conservées séparément dans `docs/examples/`. Les exemples de commandes utilisent des chemins relatifs à la racine du projet.
+`inputs/` contient les médias à traiter, et `results/` les sorties. Les médias personnels, résultats locaux, poids, environnements Python et sauvegardes sont exclus de Git. Seul `inputs/README.md` est publié pour documenter le dossier d'entrée. Les illustrations publiques sélectionnées sont dans `docs/examples/`, et les médias et résultats publics des applications dans `application/`. Les exemples de commandes utilisent des chemins relatifs à la racine du projet.
