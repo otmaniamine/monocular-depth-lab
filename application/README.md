@@ -31,7 +31,7 @@ Start-Process ".\results\application\01_navigation_routiere\index.html"
 Les photographies et les deux extraits publics sont inclus dans `application/assets/`. Les exemples sélectionnés dans les cinq sous-dossiers permettent de consulter les résultats sans relancer le modèle. Pour retélécharger les médias publics, si nécessaire :
 
 ```powershell
-.\.venv\Scripts\python.exe -m application.prepare_assets --video
+.\.venv\Scripts\python.exe -m application.tools.prepare_assets --video
 ```
 
 Cette commande peut télécharger environ 110 Mo de vidéos sources dans `results/`, puis conserver seulement de courts extraits redimensionnés dans `application/assets/`. Elle n'est pas nécessaire pour les essais habituels.
@@ -83,6 +83,6 @@ Les tests synthétiques vérifient des propriétés connues : sol seul non alarm
 .\.venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-La valeur ajoutée est le passage de la profondeur brute à plusieurs traitements, avec sélection du sol, règles explicites, abstention, rapport et analyse vidéo. Le modèle de profondeur et la géométrie de projection proviennent des travaux existants. Voir les [sources et crédits](SOURCES.md).
+La valeur ajoutée est le passage de la profondeur brute à plusieurs traitements, avec sélection du sol, règles explicites, abstention, rapport et analyse vidéo. Le modèle de profondeur et la géométrie de projection proviennent des travaux existants. Voir les [sources et crédits](docs/SOURCES.md).
 
 Les entrées personnelles, poids, environnements et résultats de travail restent ignorés par Git. Seuls les médias publics crédités et une sélection de démonstrations sont conservés dans `application/`. Aucun chemin personnel n'est inscrit dans les rapports générés.

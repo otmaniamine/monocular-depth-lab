@@ -15,4 +15,4 @@ Le point `(0.35, 0.66)` de la démonstration correspond au fauteuil. Modifier `-
 
 Action : comparer avec l'original, déplacer le point de mise au point, puis conserver la retouche si les contours conviennent. Le mélange est approximatif et peut produire des halos autour des objets fins ; il ne reproduit pas exactement l'optique d'un objectif.
 
-[Rapport calculé](exemples/RAPPORT.md) · [Paramètres](exemples/rapport.json) · [Sources](../SOURCES.md)
+[Rapport calculé](exemples/RAPPORT.md) · [Paramètres](exemples/rapport.json) · [Sources](../docs/SOURCES.md)

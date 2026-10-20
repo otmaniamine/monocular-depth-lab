@@ -17,4 +17,4 @@ La profondeur donne un point d'ancrage 3D choisi manuellement sur le sol. Le pro
 
 Valeur ajoutée possible après cette étape : charger de vrais modèles de catalogue, calibrer avec une dimension connue, adapter l'orientation au plan de sol et comparer plusieurs implantations dans une même interface.
 
-[Rapport et pixels d'occlusion](exemples/RAPPORT.md) · [Données calculées](exemples/rapport.json) · [Sources](../SOURCES.md)
+[Rapport et pixels d'occlusion](exemples/RAPPORT.md) · [Données calculées](exemples/rapport.json) · [Sources](../docs/SOURCES.md)

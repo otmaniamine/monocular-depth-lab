@@ -23,4 +23,4 @@ L'action proposée dépend du résultat. `VIGILANCE` demande une autre vue ; `AL
 
 La photographie fournie est prise à hauteur humaine : elle valide le traitement, **pas son adaptation à une caméra basse d'aspirateur**. Pour la suite, filmer à la hauteur réelle du robot, régler le rectangle de sol et évaluer chaussures, câbles, pieds de meuble, seuils et changements de revêtement. Les trous et escaliers descendants ne sont pas détectés par cette version.
 
-[Guide commun](../README.md) · [Sources et crédits](../SOURCES.md)
+[Guide commun](../README.md) · [Sources et crédits](../docs/SOURCES.md)

@@ -28,4 +28,4 @@ Pour vos médias, remplacer l'entrée par `inputs/atelier.jpg` ou une vidéo et 
 
 Une étape industrielle sérieuse nécessiterait caméra fixe calibrée, zone de passage définie sur le sol, exemples annotés, comparaison aux distances réelles et mesure des fausses alertes et des obstacles manqués. Cette démonstration ne constitue pas un dispositif de sécurité machine.
 
-[Guide commun](../README.md) · [Sources et crédits](../SOURCES.md)
+[Guide commun](../README.md) · [Sources et crédits](../docs/SOURCES.md)

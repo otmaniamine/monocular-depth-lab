@@ -18,7 +18,7 @@ Ces sources motivent des usages, pas une preuve de gains commerciaux, de sécuri
 
 ## Médias réels
 
-Les fichiers sont des photos et extraits de vidéos réels, pas des scènes générées par IA. Attribution volontaire, sources et licence listées ci-dessous. Le manifeste [assets/SOURCES.json](assets/SOURCES.json) conserve les liens de téléchargement et les empreintes des fichiers préparés. Les médias sont réencodés sans les métadonnées originales. Les courts extraits vidéo n'ont pas de son.
+Les fichiers sont des photos et extraits de vidéos réels, pas des scènes générées par IA. Attribution volontaire, sources et licence listées ci-dessous. Le manifeste [assets/SOURCES.json](../assets/SOURCES.json) conserve les liens de téléchargement et les empreintes des fichiers préparés. Les médias sont réencodés sans les métadonnées originales. Les courts extraits vidéo n'ont pas de son.
 
 | Fichier préparé | Auteur | Source |
 |---|---|---|

@@ -42,7 +42,7 @@ Les tests numériques contrôlent des scènes synthétiques connues et des prote
 Lancer les cinq démonstrations, puis les trois commandes supplémentaires documentées pour la vidéo frontale, la vidéo latérale et l'allée. Ensuite :
 
 ```powershell
-.\.venv\Scripts\python.exe -m application.build_examples
+.\.venv\Scripts\python.exe -m application.tools.build_examples
 ```
 
 Cette commande vérifie les empreintes du manifeste et les noms de sources publiques attendus. Elle copie seulement les vues référencées dans le rapport courant ; les résultats provenant d'une entrée utilisateur sont refusés. Elle ne pousse rien vers GitHub.

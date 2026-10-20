@@ -9,7 +9,7 @@ import numpy as np
 from application.geometry import (TemporalReview, analyse_obstacles, depth_focus,
                                   floor_plane, render_cuboid)
 from pointcloud import camera_intrinsics
-from application.build_examples import copy_example
+from application.tools.build_examples import copy_example
 
 
 class ApplicationTests(unittest.TestCase):

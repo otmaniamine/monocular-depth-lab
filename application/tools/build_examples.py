@@ -70,8 +70,8 @@ def main():
     page += 'resultat visuel et action proposee. Cinq demonstrations sur CPU, avec les modeles deja installes, sans entrainement.</p>'
     page += '<p class="intro">Navigation : perception hors ligne et alertes simulees. Aucun vehicule ou robot pilote. '
     page += 'Les distances et la focale sont estimees ; aucun resultat ne garantit un passage libre.</p>'
-    page += '<p><a href="README.md">Guide PowerShell</a> · <a href="SOURCES.md">Sources et credits</a> · '
-    page += '<a href="BILAN.md">Resultats observes et prochaines etapes</a></p>'
+    page += '<p><a href="README.md">Guide PowerShell</a> · <a href="docs/SOURCES.md">Sources et credits</a> · '
+    page += '<a href="docs/BILAN.md">Resultats observes et prochaines etapes</a></p>'
     page += ''.join(cards)
     page += '<article><h2>Analyse d une vraie video routiere</h2><video controls muted playsinline '
     page += 'poster="01_navigation_routiere/video/vue_001_comparaison.jpg" '
@@ -79,7 +79,7 @@ def main():
     page += '<p>Extrait analyse image par image. Vigilance et alertes a confirmer ; pas de suivi d objets ni de conduite autonome.</p>'
     page += '<a href="01_navigation_routiere/video/index.html">Les douze vues et leurs actions</a></article></html>'
     (HOME/'index.html').write_text(page, encoding='utf-8')
-    (HOME/'bilan.json').write_text(json.dumps(findings, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    (HOME/'docs'/'bilan.json').write_text(json.dumps(findings, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     print('Galerie preparee : application/index.html')
 
 

@@ -45,4 +45,4 @@ Une seconde vidéo réelle regarde par une fenêtre latérale ; elle n'est pas a
 
 Calibrer une caméra frontale fixe, annoter des obstacles et des cas difficiles, mesurer les erreurs et la latence sur l'appareil cible, puis tester dans un simulateur. La validation peut nécessiter des distances de référence ou d'autres capteurs même si l'inférence utilise uniquement une caméra. La présente application ne constitue pas un système de conduite autonome.
 
-[Sources et crédits](../SOURCES.md)
+[Sources et crédits](../docs/SOURCES.md)
