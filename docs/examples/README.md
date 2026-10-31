@@ -1,6 +1,6 @@
 # Exemples publics
 
-`reconstruction-3d.png` montre une capture réelle de la visionneuse 3D sur la photo publique `assets/examples/demo15.jpg` du même dépôt officiel, avec le modèle métrique intérieur Small. Ce nuage utilise une focale estimée (champ horizontal supposé de 60 degrés). Il contient uniquement les surfaces vues depuis la photo. Le [guide 3D](../RECONSTRUCTION-3D.md) décrit la méthode et ses limites.
+`reconstruction-3d.png` montre désormais la photo publique `application/assets/room.jpg` et un rendu du nuage de points réellement calculé avec le modèle métrique intérieur Small. Source : [Curtis Adams, Pexels](https://www.pexels.com/photo/wooden-floor-inside-the-house-7601090/), sous [licence Pexels](https://www.pexels.com/license/). Ce nuage utilise une focale estimée (champ horizontal supposé de 80 degrés), un côté maximal de 960 pixels et un échantillonnage de deux pixels. Il contient 151 665 points et uniquement les surfaces vues depuis la photo. Le [GIF et les visuels de présentation](../showcase/README.md) complètent cet exemple. Le [guide 3D](../RECONSTRUCTION-3D.md) décrit la méthode et ses limites.
 
 Ces trois images sont les sorties réelles d'inférences locales sur la même image publique, `assets/examples/demo01.jpg`, fournie par le [dépôt officiel Depth Anything V2](https://github.com/DepthAnything/Depth-Anything-V2/blob/a561b849ebae10a6f5ef49e26c83cbbcd36c71bf/assets/examples/demo01.jpg). Crédit de l'image source : dépôt Depth Anything V2. Les photos personnelles ne sont pas incluses.
 

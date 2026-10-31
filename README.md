@@ -110,17 +110,21 @@ Pour les photos d'extérieur :
 .\.venv\Scripts\python.exe .\reconstruct.py --input ".\inputs" --model outdoor --open
 ```
 
-Pour une démonstration avec une photo publique fournie par le dépôt officiel :
+Pour reproduire la nouvelle scène intérieure publique présentée ci-dessous :
 
 ```powershell
-.\.venv\Scripts\python.exe .\reconstruct.py --input ".\source\assets\examples\demo01.jpg" --model outdoor --max-depth 35 --open
+.\.venv\Scripts\python.exe .\reconstruct.py --input ".\application\assets\room.jpg" --model indoor --fov 80 --stride 2 --open
 ```
 
 Exécutez une seule de ces commandes selon le cas. Les sorties sont dans `results/3d/`. `--open` ouvre le premier résultat dans votre navigateur.
 
 Les messages `xFormers not available` peuvent apparaître deux fois : cette optimisation facultative est absente, mais le calcul sur CPU continue. Si le programme indique un nombre de points puis `Ouvrir :` suivi d'un fichier HTML, la reconstruction a réussi. Le nom de ce fichier dépend de votre photo ; ne le recopiez pas comme une commande.
 
-![Nuage de points reconstruit depuis la photo publique d'un escalier intérieur](docs/examples/reconstruction-3d.png)
+![Nouvelle scène intérieure : photo réelle et nuage de points reconstruit](docs/examples/reconstruction-3d.png)
+
+![Rotation du nuage de points de la scène intérieure](docs/showcase/reconstruction-3d.gif)
+
+La photo de démonstration représente désormais une pièce avec du mobilier, photographiée par Curtis Adams sur Pexels. La reconstruction contient 151 665 points colorés ; le GIF montre une rotation de la vue sur les points calculés, sans création des surfaces cachées. Les [visuels de présentation et leurs crédits](docs/showcase/README.md) regroupent les images et GIF des applications.
 
 La reconstruction couvre les surfaces visibles. La profondeur est estimée et, sans calibration, la focale est supposée : ce résultat ne fournit pas de dimensions certifiées. Voir le [guide 3D et ses sources](docs/RECONSTRUCTION-3D.md) pour les commandes, les réglages et les limites.
 

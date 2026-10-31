@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "model": "outdoor",
+  "camera": {
+    "fx": 500.438543171023,
+    "fy": 500.438543171023,
+    "cx": 383.5,
+    "cy": 215.5,
+    "estimated": true,
+    "principal_point_assumed": true,
+    "assumed_horizontal_fov_degrees": 75.0
+  },
+  "image_size": [
+    768,
+    432
+  ],
+  "original_size": [
+    768,
+    432
+  ],
+  "points": 45031,
+  "units": "estimated_meters",
+  "axes": "x right, y down, z forward",
+  "single_view": true,
+  "depth_limits": [
+    0.1,
+    35.0
+  ],
+  "stride": 2,
+  "edge_threshold": 0.1,
+  "input_size": 392,
+  "max_reprojection_error_pixels": 6.103515625e-05,
+  "depth_percentiles_m": [
+    10.819997310638428,
+    22.29692268371582,
+    32.77270317077637
+  ],
+  "limitations": [
+    "Unobserved surfaces are absent",
+    "Depth is inferred, not measured",
+    "Distortion is not corrected; supply a rectified image",
+    "Assumed camera intrinsics can deform the geometry"
+  ],
+  "source": "application/assets/dashcam.jpg",
+  "gif": {
+    "frames": 48,
+    "yaw_degrees": [
+      -18,
+      18
+    ],
+    "pitch_degrees": 22,
+    "text_overlay": false
+  }
+}

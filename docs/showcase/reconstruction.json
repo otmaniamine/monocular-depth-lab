@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "model": "indoor",
+  "camera": {
+    "fx": 572.0417244452208,
+    "fy": 572.265265564582,
+    "cx": 479.5,
+    "cy": 319.5,
+    "estimated": true,
+    "principal_point_assumed": true,
+    "assumed_horizontal_fov_degrees": 80.0
+  },
+  "image_size": [
+    960,
+    640
+  ],
+  "original_size": [
+    1280,
+    853
+  ],
+  "points": 151665,
+  "units": "estimated_meters",
+  "axes": "x right, y down, z forward",
+  "single_view": true,
+  "depth_limits": [
+    0.1,
+    20.0
+  ],
+  "stride": 2,
+  "edge_threshold": 0.1,
+  "input_size": 392,
+  "max_reprojection_error_pixels": 6.103515625e-05,
+  "depth_percentiles_m": [
+    2.8563083171844483,
+    4.788344383239746,
+    11.487937545776365
+  ],
+  "limitations": [
+    "Unobserved surfaces are absent",
+    "Depth is inferred, not measured",
+    "Distortion is not corrected; supply a rectified image",
+    "Assumed camera intrinsics can deform the geometry"
+  ],
+  "source": "application/assets/room.jpg",
+  "gif": {
+    "frames": 48,
+    "duration_ms": 90,
+    "yaw_degrees": [
+      -23,
+      23
+    ],
+    "description": "Camera orbit of computed points; no hidden geometry generated.",
+    "text_overlay": false
+  }
+}
